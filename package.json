@@ -1,0 +1,12 @@
+{
+	"name": "EIT Printer Montior",
+	"description": "A simple webpage to collect status information on the academic building printers",
+	"main": "server.js",
+	"scripts":{
+		"start": "node server.js"
+	},
+	"dependencies": {
+	},
+	"devDependencies": {
+	}
+}
