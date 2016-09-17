@@ -1,6 +1,7 @@
 var express = require('express');
 var request = require('request');
 var path = require('path');
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 var app = express();
 
 // set the port of our application
@@ -11,11 +12,11 @@ var port = process.env.PORT || 8080;
 app.use(express.static(__dirname + '/'));
 
 app.get('/getPrinterInfo', function(req, res) {
-	var url = "http://https://137.112.31.45";
+	var url = "http://137.112.31.45";
 	request(url, function(error, response, html){
 		if (error) throw error;
 		else {
-			console.log(html);
+			res.json(html);
 		}
 	});
 });
