@@ -1,4 +1,6 @@
 var express = require('express');
+var request = require('request');
+var path = require('path');
 var app = express();
 
 // set the port of our application
@@ -8,13 +10,23 @@ var port = process.env.PORT || 8080;
 // make express look in the public directory for assets (css/js/img)
 app.use(express.static(__dirname + '/'));
 
+app.get('/getPrinterInfo', function(req, res) {
+	var url = "http://https://137.112.31.45";
+	request(url, function(error, response, html){
+		if (error) throw error;
+		else {
+			console.log(html);
+		}
+	});
+});
+
 // set the home page route
-app.get('/', function(req, res) {
+app.get('*', function(req, res) {
 
     // ejs render automatically looks in the views folder
-    res.send('printer.html');
+    res.sendFile(path.join(__dirname, 'printer.html'));
 });
 
 app.listen(port, function() {
-    console.log('Our app is running on http://localhost:' + port);
+    console.log('The printer monitor is running on http://localhost:' + port);
 });

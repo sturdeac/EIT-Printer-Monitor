@@ -1,12 +1,19 @@
 {
-	"name": "EIT Printer Montior",
-	"description": "A simple webpage to collect status information on the academic building printers",
-	"main": "server.js",
-	"scripts":{
-		"start": "node server.js"
-	},
-	"dependencies": {
-	},
-	"devDependencies": {
-	}
+  "name": "eit_printer_monitor",
+  "version": "0.1.0",
+  "description": "A simple webpage to collect status information on the academic building printers",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mercieral/EIT-Printer-Monitor.git"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "request": "^2.74.0"
+  },
+  "devDependencies": {}
 }
