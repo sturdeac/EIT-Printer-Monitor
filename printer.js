@@ -7,6 +7,12 @@ $.ajax({
 	success: function(result, status, xhr){
 		console.log("hooray!");
 		console.log(result);
+		let statusText = $(result).find('#MachineStatus').text();
+		if (statusText.startsWith("Load Tray 1") || statusText.startsWith("Processing") 
+			|| statusText.startsWith("Ready")){
+			statusText = "Working";
+		}
+		$('#commons-status').text("Status - " + statusText);
 	},
 	error: function(xhr, status, error){
 		console.log(error);
