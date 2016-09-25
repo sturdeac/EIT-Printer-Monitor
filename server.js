@@ -9,7 +9,7 @@ var app = express();
 var port = process.env.PORT || 8080;
 
 // make express look in the public directory for assets (css/js/img)
-app.use(express.static(__dirname + '/'));
+app.use(express.static(__dirname + '/', {maxAge: '5d'}));
 
 app.get('/getPrinterInfo', function(req, res) {
 	let printer = req.query.printer;

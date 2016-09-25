@@ -12,6 +12,7 @@
         5 Minute Automated Refresh
     </div>
     <div id="nav">
+        <p>Estimated Reams: <p id="reams"></p></p>
         <a href = "http://moench-commons.printer.rose-hulman.edu/">Moench-Commons</a><br>
         <a href = "http://D116.printer.rose-hulman.edu/">d116</a><br>
         <a href = "http://bl113-ps.printer.rose-hulman.edu/">bl113</a><br>
@@ -30,22 +31,28 @@
                     <div class="status_all">
                         <h2 align="center" id="moench-commons-status" class="status">Status - Unknown</h2>
                         <div class="levels tray2">
-                        	<p class="status_type">tray2</p> 
+                        	<p class="status_type">Tray 2</p> 
                     		<img id="moench-commons-tray2-img" class="status_tray_image"/>
                             <p id="moench-commons-tray2" class="status_tray_level">Unknown</p>
                         </div>
                         <div class="levels tray3">
-                        	<p class="status_type">tray3</p>
+                        	<p class="status_type">Tray 3</p>
                         	<img id="moench-commons-tray3-img" class="status_tray_image"/>
                             <p id="moench-commons-tray3" class="status_tray_level">Unknown</p>
                     	</div>
                     	<div class="levels ink">
-                        	<p class="status_type">ink levels</p>
-                        	<img class="status_tray_image" />
+                        	<p class="status_type">Ink Levels</p>
+                        	<div class="status_tray_image empty_level">
+                                <div id="moench-commons-inkbar" class="bar_level"></div>
+                            </div>
+                            <p id="moench-commons-ink" class="status_tray_level">Unknown</p>
                     	</div>
                     	<div class="levels kit">
-                        	<p class="status_type">maintenance kit</p>
-                        	<img class="status_tray_image"/>
+                        	<p class="status_type">Maintenence Kit</p>
+                        	<div class="status_tray_image empty_level"/>
+                                <div id="moench-commons-kitbar" class="bar_level"></div>
+                            </div>
+                            <p id="moench-commons-kit" class="status_tray_level">Unknown</p>
                     	</div>
                     </div>
                 </td>
@@ -54,22 +61,28 @@
                     <div class="status_all">
                         <h2 align="center" id="D116-status" class="status">Status - Unknown</h2>
                         <div class="levels tray2">
-                            <p class="status_type">tray2</p> 
+                            <p class="status_type">Tray 2</p> 
                             <img id="D116-tray2-img" class="status_tray_image"/>
                             <p id="D116-tray2" class="status_tray_level">Unknown</p>
                         </div>
                         <div class="levels tray3">
-                            <p class="status_type">tray3</p>
+                            <p class="status_type">Tray 3</p>
                             <img id="D116-tray3-img" class="status_tray_image"/>
                             <p id="D116-tray3" class="status_tray_level">Unknown</p>
                         </div>
                         <div class="levels ink">
-                            <p class="status_type">ink levels</p>
-                            <img class="status_tray_image"/>
+                            <p class="status_type">Ink Levels</p>
+                            <div class="status_tray_image empty_level">
+                                <div id="D116-inkbar" class="bar_level"></div>
+                            </div>
+                            <p id="D116-ink" class="status_tray_level">Unknown</p>
                         </div>
                         <div class="levels kit">
-                            <p class="status_type">maintenance kit</p>
-                            <img class="status_tray_image"/>
+                            <p class="status_type">Maintenence Kit</p>
+                            <div class="status_tray_image empty_level"/>
+                                <div id="D116-kitbar" class="bar_level"></div>
+                            </div>
+                            <p id="D116-kit" class="status_tray_level">Unknown</p>
                         </div>
                     </div>
                 </td>
@@ -78,22 +91,28 @@
                         <div class="status_all">
                             <h2 align="center" id="bl113-ps-status" class="status">Status - Unknown</h2>
                             <div class="levels tray2">
-                                <p class="status_type">tray2</p> 
+                                <p class="status_type">Tray 2</p> 
                                 <img id="bl113-ps-tray2-img" class="status_tray_image"/>
                                 <p id="bl113-ps-tray2" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels tray3">
-                                <p class="status_type">tray3</p>
+                                <p class="status_type">Tray 3</p>
                                 <img id="bl113-ps-tray3-img" class="status_tray_image"/>
                                 <p id="bl113-ps-tray3" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels ink">
-                                <p class="status_type">ink levels</p>
-                                <img class="status_tray_image"/>
+                                <p class="status_type">Ink Levels</p>
+                                <div class="status_tray_image empty_level">
+                                    <div id="bl113-ps-inkbar" class="bar_level"></div>
+                                </div>
+                                <p id="bl113-ps-ink" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels kit">
-                                <p class="status_type">maintenance kit</p>
-                                <img class="status_tray_image"/>
+                                <p class="status_type">Maintenence Kit</p>
+                                <div class="status_tray_image empty_level"/>
+                                    <div id="bl113-ps-kitbar" class="bar_level"></div>
+                                </div>
+                                <p id="bl113-ps-kit" class="status_tray_level">Unknown</p>
                             </div>
                         </div>
                 </td>
@@ -103,22 +122,28 @@
                         <div class="status_all">
                             <h2 align="center" id="o157-ps-status" class="status">Status - Unknown</h2>
                             <div class="levels tray2">
-                                <p class="status_type">tray2</p> 
+                                <p class="status_type">Tray 2</p> 
                                 <img id="o157-ps-tray2-img" class="status_tray_image"/>
                                 <p id="o157-ps-tray2" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels tray3">
-                                <p class="status_type">tray3</p>
+                                <p class="status_type">Tray 3</p>
                                 <img id="o157-ps-tray3-img" class="status_tray_image"/>
                                 <p id="o157-ps-tray3" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels ink">
-                                <p class="status_type">ink levels</p>
-                                <img class="status_tray_image"/>
+                                <p class="status_type">Ink Levels</p>
+                                <div class="status_tray_image empty_level">
+                                    <div id="o157-ps-inkbar" class="bar_level"></div>
+                                </div>
+                                <p id="o157-ps-ink" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels kit">
-                                <p class="status_type">maintenance kit</p>
-                                <img class="status_tray_image"/>
+                                <p class="status_type">Maintenence Kit</p>
+                                <div class="status_tray_image empty_level"/>
+                                    <div id="o157-ps-kitbar" class="bar_level"></div>
+                                </div>
+                                <p id="o157-ps-kit" class="status_tray_level">Unknown</p>
                             </div>
                         </div>
                     </td>
@@ -127,22 +152,28 @@
                         <div class="status_all">
                             <h2 align="center" id="o257-ps-status" class="status">Status - Unknown</h2>
                             <div class="levels tray2">
-                                <p class="status_type">tray2</p> 
+                                <p class="status_type">Tray 2</p> 
                                 <img id="o257-ps-tray2-img" class="status_tray_image"/>
                                 <p id="o257-ps-tray2" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels tray3">
-                                <p class="status_type">tray3</p>
+                                <p class="status_type">Tray 3</p>
                                 <img id="o257-ps-tray3-img" class="status_tray_image"/>
                                 <p id="o257-ps-tray3" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels ink">
-                                <p class="status_type">ink levels</p>
-                                <img class="status_tray_image"/>
+                                <p class="status_type">Ink Levels</p>
+                                <div class="status_tray_image empty_level">
+                                    <div id="o257-ps-inkbar" class="bar_level"></div>
+                                </div>
+                                <p id="o257-ps-ink" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels kit">
-                                <p class="status_type">maintenance kit</p>
-                                <img class="status_tray_image"/>
+                                <p class="status_type">Maintenence Kit</p>
+                                <div class="status_tray_image empty_level"/>
+                                    <div id="o257-ps-kitbar" class="bar_level"></div>
+                                </div>
+                                <p id="o257-ps-kit" class="status_tray_level">Unknown</p>
                             </div>
                         </div>
                     </td>
@@ -151,22 +182,28 @@
                         <div class="status_all">
                             <h2 align="center" id="o200c-ps-status" class="status">Status - Unknown</h2>
                             <div class="levels tray2">
-                                <p class="status_type">tray2</p> 
+                                <p class="status_type">Tray 2</p> 
                                 <img id="o200c-ps-tray2-img" class="status_tray_image"/>
                                 <p id="o200c-ps-tray2" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels tray3">
-                                <p class="status_type">tray3</p>
+                                <p class="status_type">Tray 3</p>
                                 <img id="o200c-ps-tray3-img" class="status_tray_image"/>
                                 <p id="o200c-ps-tray3" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels ink">
-                                <p class="status_type">ink levels</p>
-                                <img class="status_tray_image"/>
+                                <p class="status_type">Ink Levels</p>
+                                <div class="status_tray_image empty_level">
+                                    <div id="o200c-ps-inkbar" class="bar_level"></div>
+                                </div>
+                                <p id="o200c-ps-ink" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels kit">
-                                <p class="status_type">maintenance kit</p>
-                                <img class="status_tray_image"/>
+                                <p class="status_type">Maintenence Kit</p>
+                                <div class="status_tray_image empty_level"/>
+                                    <div id="o200c-ps-kitbar" class="bar_level"></div>
+                                </div>
+                                <p id="o200c-ps-kit" class="status_tray_level">Unknown</p>
                             </div>
                         </div>
                     </td>
@@ -177,22 +214,28 @@
                         <div class="status_all">
                             <h2 align="center" id="m246-ps-status" class="status">Status - Unknown</h2>
                             <div class="levels tray2">
-                                <p class="status_type">tray2</p> 
+                                <p class="status_type">Tray 2</p> 
                                 <img id="m246-ps-tray2-img" class="status_tray_image"/>
                                 <p id="m246-ps-tray2" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels tray3">
-                                <p class="status_type">tray3</p>
+                                <p class="status_type">Tray 3</p>
                                 <img id="m246-ps-tray3-img" class="status_tray_image"/>
                                 <p id="m246-ps-tray3" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels ink">
-                                <p class="status_type">ink levels</p>
-                                <img class="status_tray_image"/>
+                                <p class="status_type">Ink Levels</p>
+                                <div class="status_tray_image empty_level">
+                                    <div id="m246-ps-inkbar" class="bar_level"></div>
+                                </div>
+                                <p id="m246-ps-ink" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels kit">
-                                <p class="status_type">maintenance kit</p>
-                                <img class="status_tray_image"/>
+                                <p class="status_type">Maintenence Kit</p>
+                                <div class="status_tray_image empty_level"/>
+                                    <div id="m246-ps-kitbar" class="bar_level"></div>
+                                </div>
+                                <p id="m246-ps-kit" class="status_tray_level">Unknown</p>
                             </div>
                         </div>
                     </td>
@@ -201,22 +244,28 @@
                         <div class="status_all">
                             <h2 align="center" id="crapo2-status" class="status">Status - Unknown</h2>
                             <div class="levels tray2">
-                                <p class="status_type">tray2</p> 
+                                <p class="status_type">Tray 2</p> 
                                 <img id="crapo2-tray2-img" class="status_tray_image"/>
                                 <p id="crapo2-tray2" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels tray3">
-                                <p class="status_type">tray3</p>
+                                <p class="status_type">Tray 3</p>
                                 <img id="crapo2-tray3-img" class="status_tray_image"/>
                                 <p id="crapo2-tray3" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels ink">
-                                <p class="status_type">ink levels</p>
-                                <img class="status_tray_image"/>
+                                <p class="status_type">Ink Levels</p>
+                                <div class="status_tray_image empty_level">
+                                    <div id="crapo2-inkbar" class="bar_level"></div>
+                                </div>
+                                <p id="crapo2-ink" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels kit">
-                                <p class="status_type">maintenance kit</p>
-                                <img class="status_tray_image"/>
+                                <p class="status_type">Maintenence Kit</p>
+                                <div class="status_tray_image empty_level"/>
+                                    <div id="crapo2-kitbar" class="bar_level"></div>
+                                </div>
+                                <p id="crapo2-kit" class="status_tray_level">Unknown</p>
                             </div>
                         </div>
                     </td>
@@ -225,22 +274,28 @@
                         <div class="status_all">
                             <h2 align="center" id="crapo3-status" class="status">Status - Unknown</h2>
                             <div class="levels tray2">
-                                <p class="status_type">tray2</p> 
+                                <p class="status_type">Tray 2</p> 
                                 <img id="crapo3-tray2-img" class="status_tray_image"/>
                                 <p id="crapo3-tray2" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels tray3">
-                                <p class="status_type">tray3</p>
+                                <p class="status_type">Tray 3</p>
                                 <img id="crapo3-tray3-img" class="status_tray_image"/>
                                 <p id="crapo3-tray3" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels ink">
-                                <p class="status_type">ink levels</p>
-                                <img class="status_tray_image"/>
+                                <p class="status_type">Ink Levels</p>
+                                <div class="status_tray_image empty_level">
+                                    <div id="crapo3-inkbar" class="bar_level"></div>
+                                </div>
+                                <p id="crapo3-ink" class="status_tray_level">Unknown</p>
                             </div>
                             <div class="levels kit">
-                                <p class="status_type">maintenance kit</p>
-                                <img class="status_tray_image"/>
+                                <p class="status_type">Maintenence Kit</p>
+                                <div class="status_tray_image empty_level"/>
+                                    <div id="crapo3-kitbar" class="bar_level"></div>
+                                </div>
+                                <p id="crapo3-kit" class="status_tray_level">Unknown</p>
                             </div>
                         </div>
                     </td>

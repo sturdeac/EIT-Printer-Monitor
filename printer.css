@@ -54,3 +54,13 @@
     width: 150px;
     text-align: center
 }
+
+.empty_level{
+    border: 2px solid #bfbfbf;
+    width: 246px;
+}
+.bar_level {
+    background-color: black;
+    width: 0%; /* Adjust with JavaScript */
+    height: 100%;
+}
