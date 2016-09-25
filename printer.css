@@ -1,0 +1,56 @@
+#header {
+    background-color:#990000;
+    color:white;
+    text-align:center;
+    padding:10px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:100%;
+    width:130px;
+    float:left;
+    padding:5px; 
+}
+#section {
+    width:500px;
+    float:left;
+    padding:10px; 
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px; 
+}
+.status_all {
+    border: 1px solid black; 
+    height: 180px; 
+    width: 550px; 
+    margin: 15px auto;
+}
+.status{
+    margin: 14px 0px 14px 0px;
+}
+
+.levels {
+    margin: 12px 0px 12px 0px;
+}
+.status_type{
+    margin: 0px 0px 0px 10px; 
+    width: 130px; 
+    display: inline-block
+}
+.status_tray_image{
+    margin: 0px; 
+    width: 250px; 
+    height: 15px; 
+    display: inline-block
+}
+.status_tray_level{
+    margin: 0px;
+    display: inline-block; 
+    width: 150px;
+    text-align: center
+}

@@ -2,147 +2,254 @@
 <html>
 <head>
     <title>EIT Printer Monitor</title>
-    <META HTTP-EQUIV="refresh" CONTENT="450">
-        <style>
-            #header {
-                background-color:#990000;
-                color:white;
-                text-align:center;
-                padding:10px;
-            }
-            #nav {
-                line-height:30px;
-                background-color:#eeeeee;
-                height:100%;
-                width:130px;
-                float:left;
-                padding:5px; 
-            }
-            #section {
-                width:500px;
-                float:left;
-                padding:10px; 
-            }
-            #footer {
-                background-color:black;
-                color:white;
-                clear:both;
-                text-align:center;
-                padding:5px; 
-            }
-        </style>
-        <script src="jquery-3.1.0.min.js"></script>
-        <script src="printer.js"></script>
-    </head>
-    <body>
-        <div id="header">
-            <h1>EIT Printer Monitor (Beta)</h1>
-            5 Minute Automated Refresh
-        </div>
-        <div id="nav">
-            <a href = "http://moench-commons.printer.rose-hulman.edu/">Moench-Commons</a><br>
-            <a href = "http://D116.printer.rose-hulman.edu/">d116</a><br>
-            <a href = "http://bl113-ps.printer.rose-hulman.edu/">bl113</a><br>
-            <a href = "http://o157-ps.printer.rose-hulman.edu/">o157</a><br>
-            <a href = "http://o257-ps.printer.rose-hulman.edu/">o257</a><br>
-            <a href = "http://o200c-ps.printer.rose-hulman.edu/">o200c</a><br>
-            <a href = "http://m246-ps.printer.rose-hulman.edu/">m246</a><br>
-            <a href = "http://crapo2.printer.rose-hulman.edu/">crapo2</a><br>
-            <a href = "http://crapo3.printer.rose-hulman.edu/">crapo3</a><br>
-        </div>
-        <div id="section">
-            <table>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="printer.js"></script>
+    <link rel="stylesheet" type="text/css" href="printer.css">
+</head>
+<body>
+    <div id="header">
+        <h1>EIT Printer Monitor (Beta)</h1>
+        5 Minute Automated Refresh
+    </div>
+    <div id="nav">
+        <a href = "http://moench-commons.printer.rose-hulman.edu/">Moench-Commons</a><br>
+        <a href = "http://D116.printer.rose-hulman.edu/">d116</a><br>
+        <a href = "http://bl113-ps.printer.rose-hulman.edu/">bl113</a><br>
+        <a href = "http://o157-ps.printer.rose-hulman.edu/">o157</a><br>
+        <a href = "http://o257-ps.printer.rose-hulman.edu/">o257</a><br>
+        <a href = "http://o200c-ps.printer.rose-hulman.edu/">o200c</a><br>
+        <a href = "http://m246-ps.printer.rose-hulman.edu/">m246</a><br>
+        <a href = "http://crapo2.printer.rose-hulman.edu/">crapo2</a><br>
+        <a href = "http://crapo3.printer.rose-hulman.edu/">crapo3</a><br>
+    </div>
+    <div id="section">
+        <table>
+            <tr>
+                <td>
+                    <h2>Moench Commons</h2>
+                    <div class="status_all">
+                        <h2 align="center" id="moench-commons-status" class="status">Status - Unknown</h2>
+                        <div class="levels tray2">
+                        	<p class="status_type">tray2</p> 
+                    		<img id="moench-commons-tray2-img" class="status_tray_image"/>
+                            <p id="moench-commons-tray2" class="status_tray_level">Unknown</p>
+                        </div>
+                        <div class="levels tray3">
+                        	<p class="status_type">tray3</p>
+                        	<img id="moench-commons-tray3-img" class="status_tray_image"/>
+                            <p id="moench-commons-tray3" class="status_tray_level">Unknown</p>
+                    	</div>
+                    	<div class="levels ink">
+                        	<p class="status_type">ink levels</p>
+                        	<img class="status_tray_image" />
+                    	</div>
+                    	<div class="levels kit">
+                        	<p class="status_type">maintenance kit</p>
+                        	<img class="status_tray_image"/>
+                    	</div>
+                    </div>
+                </td>
+                <td>
+                    <h2>D116</h2>
+                    <div class="status_all">
+                        <h2 align="center" id="D116-status" class="status">Status - Unknown</h2>
+                        <div class="levels tray2">
+                            <p class="status_type">tray2</p> 
+                            <img id="D116-tray2-img" class="status_tray_image"/>
+                            <p id="D116-tray2" class="status_tray_level">Unknown</p>
+                        </div>
+                        <div class="levels tray3">
+                            <p class="status_type">tray3</p>
+                            <img id="D116-tray3-img" class="status_tray_image"/>
+                            <p id="D116-tray3" class="status_tray_level">Unknown</p>
+                        </div>
+                        <div class="levels ink">
+                            <p class="status_type">ink levels</p>
+                            <img class="status_tray_image"/>
+                        </div>
+                        <div class="levels kit">
+                            <p class="status_type">maintenance kit</p>
+                            <img class="status_tray_image"/>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <h2>Bl113</h2>
+                        <div class="status_all">
+                            <h2 align="center" id="bl113-ps-status" class="status">Status - Unknown</h2>
+                            <div class="levels tray2">
+                                <p class="status_type">tray2</p> 
+                                <img id="bl113-ps-tray2-img" class="status_tray_image"/>
+                                <p id="bl113-ps-tray2" class="status_tray_level">Unknown</p>
+                            </div>
+                            <div class="levels tray3">
+                                <p class="status_type">tray3</p>
+                                <img id="bl113-ps-tray3-img" class="status_tray_image"/>
+                                <p id="bl113-ps-tray3" class="status_tray_level">Unknown</p>
+                            </div>
+                            <div class="levels ink">
+                                <p class="status_type">ink levels</p>
+                                <img class="status_tray_image"/>
+                            </div>
+                            <div class="levels kit">
+                                <p class="status_type">maintenance kit</p>
+                                <img class="status_tray_image"/>
+                            </div>
+                        </div>
+                </td>
                 <tr>
                     <td>
-                        <h2>Moench Commons</h2>
-                        <div class="all_status" style="border: 1px solid black; height: 180px; width: 580px; margin: 15px auto;">
-                            <h2 align="center" id="commons-status" style="margin: 14px 0px 14px 0px">Status - Unknown</h2>
-                            <div class="levels tray2" style="margin: 12px 0px 12px 0px">
-                            	<p style="margin: 0px 0px 0px 0px; width: 8em; display: inline-block">tray2</p> 
-                        		<img style="width: 300px; height: 15px"src="images/level3.gif"/>
+                        <h2>Olin 157</h2>
+                        <div class="status_all">
+                            <h2 align="center" id="o157-ps-status" class="status">Status - Unknown</h2>
+                            <div class="levels tray2">
+                                <p class="status_type">tray2</p> 
+                                <img id="o157-ps-tray2-img" class="status_tray_image"/>
+                                <p id="o157-ps-tray2" class="status_tray_level">Unknown</p>
                             </div>
-                            <div class="levels tray3" style="margin: 12px 0px 12px 0px">
-                            	<p style="margin: 0px 0px 0px 0px; width: 8em; display: inline-block">tray3</p>
-                            	<img style="width: 300px; height: 15px"src="images/level3.gif"/>
-                        	</div>
-                        	<div class="levels ink" style="margin: 12px 0px 12px 0px">
-                            	<p style="margin: 0px 0px 0px 0px; width: 8em; display: inline-block">ink levels</p>
-                            	<img style="width: 300px; height: 15px"src="images/level3.gif"/>
-                        	</div>
-                        	<div class="levels kit" style="margin: 12px 0px 12px 0px">
-                            	<p style="margin: 0px 0px 0px 0px; width: 8em; display: inline-block">maintenance kit</p>
-                            	<img style="width: 300px; height: 15px"src="images/level3.gif"/>
-                        	</div>
+                            <div class="levels tray3">
+                                <p class="status_type">tray3</p>
+                                <img id="o157-ps-tray3-img" class="status_tray_image"/>
+                                <p id="o157-ps-tray3" class="status_tray_level">Unknown</p>
+                            </div>
+                            <div class="levels ink">
+                                <p class="status_type">ink levels</p>
+                                <img class="status_tray_image"/>
+                            </div>
+                            <div class="levels kit">
+                                <p class="status_type">maintenance kit</p>
+                                <img class="status_tray_image"/>
+                            </div>
                         </div>
                     </td>
                     <td>
-                        <h2>D116</h2>
-                        <div style="border: 1px solid black; height: 180px; width: 580px; margin: 15px auto;">
-                                <h2 align="center" id="status" style="margin: 16px 0px 16px 0px; width: 75">Status - Unknown</h2>
-                                <p id="tray2" style="margin: 13px 0px 13px 0px; width: 75; display: inline-block">tray2</p>
-                                <p id="tray3" style="margin: 13px 0px 13px 0px; width: 75; display: inline-block">tray3</p>
-                                <p id="ink" style="margin: 13px 0px 13px 0px; width: 75; display: inline-block">ink levels</p>
-                                <p id="maint" style="margin: 13px 0px 13px 0px; width: 75; display: inline-block">maintenance kit</p>
+                        <h2>Olin 257</h2>
+                        <div class="status_all">
+                            <h2 align="center" id="o257-ps-status" class="status">Status - Unknown</h2>
+                            <div class="levels tray2">
+                                <p class="status_type">tray2</p> 
+                                <img id="o257-ps-tray2-img" class="status_tray_image"/>
+                                <p id="o257-ps-tray2" class="status_tray_level">Unknown</p>
+                            </div>
+                            <div class="levels tray3">
+                                <p class="status_type">tray3</p>
+                                <img id="o257-ps-tray3-img" class="status_tray_image"/>
+                                <p id="o257-ps-tray3" class="status_tray_level">Unknown</p>
+                            </div>
+                            <div class="levels ink">
+                                <p class="status_type">ink levels</p>
+                                <img class="status_tray_image"/>
+                            </div>
+                            <div class="levels kit">
+                                <p class="status_type">maintenance kit</p>
+                                <img class="status_tray_image"/>
+                            </div>
                         </div>
                     </td>
                     <td>
-                        <h2>Bl113</h2>
-                        <div style="border: 1px solid rgb(0, 0, 0); overflow: hidden; margin: 15px auto; max-width: 580px;">
-                            <iframe scrolling="no" src="http://137.112.31.44/hp/device/this.LCDispatcher" style="border: 0px none; margin-left: -170px; height: 575px; margin-top: -400px; width: 630px;">
-                            </iframe>
+                        <h2>Olin 200c</h2>
+                        <div class="status_all">
+                            <h2 align="center" id="o200c-ps-status" class="status">Status - Unknown</h2>
+                            <div class="levels tray2">
+                                <p class="status_type">tray2</p> 
+                                <img id="o200c-ps-tray2-img" class="status_tray_image"/>
+                                <p id="o200c-ps-tray2" class="status_tray_level">Unknown</p>
+                            </div>
+                            <div class="levels tray3">
+                                <p class="status_type">tray3</p>
+                                <img id="o200c-ps-tray3-img" class="status_tray_image"/>
+                                <p id="o200c-ps-tray3" class="status_tray_level">Unknown</p>
+                            </div>
+                            <div class="levels ink">
+                                <p class="status_type">ink levels</p>
+                                <img class="status_tray_image"/>
+                            </div>
+                            <div class="levels kit">
+                                <p class="status_type">maintenance kit</p>
+                                <img class="status_tray_image"/>
+                            </div>
                         </div>
                     </td>
-                    <tr>
-                        <td>
-                            <h2>Olin 157</h2>
-                            <div style="border: 1px solid rgb(0, 0, 0); overflow: hidden; margin: 15px auto; max-width: 580px;">
-                                <iframe scrolling="no" src="http://137.112.31.41/hp/device/this.LCDispatcher" style="border: 0px none; margin-left: -170px; height: 575px; margin-top: -400px; width: 630px;">
-                                </iframe>
+                </tr>
+                <tr>
+                    <td>
+                        <h2>Myers 246</h2>
+                        <div class="status_all">
+                            <h2 align="center" id="m246-ps-status" class="status">Status - Unknown</h2>
+                            <div class="levels tray2">
+                                <p class="status_type">tray2</p> 
+                                <img id="m246-ps-tray2-img" class="status_tray_image"/>
+                                <p id="m246-ps-tray2" class="status_tray_level">Unknown</p>
                             </div>
-                        </td>
-                        <td>
-                            <h2>Olin 257</h2>
-                            <div style="border: 1px solid rgb(0, 0, 0); overflow: hidden; margin: 15px auto; max-width: 580px;">
-                                <div style="border: 0px none; margin-left: -170px; height: 575px; margin-top: -400px; width: 630px;">
-                                </div>
+                            <div class="levels tray3">
+                                <p class="status_type">tray3</p>
+                                <img id="m246-ps-tray3-img" class="status_tray_image"/>
+                                <p id="m246-ps-tray3" class="status_tray_level">Unknown</p>
                             </div>
-                        </td>
-                        <td>
-                            <h2>Olin 200c</h2>
-                            <div style="border: 1px solid rgb(0, 0, 0); overflow: hidden; margin: 15px auto; max-width: 580px;">
-                                <iframe scrolling="no" src="http://137.112.31.42/hp/device/this.LCDispatcher" style="border: 0px none; margin-left: -170px; height: 575px; margin-top: -400px; width: 630px;">
-                                </iframe>
+                            <div class="levels ink">
+                                <p class="status_type">ink levels</p>
+                                <img class="status_tray_image"/>
                             </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2>Myers 246</h2>
-                            <div style="border: 1px solid rgb(0, 0, 0); overflow: hidden; margin: 15px auto; max-width: 580px;">
-                                <iframe scrolling="no" src="http://137.112.31.76/hp/device/this.LCDispatcher" style="border: 0px none; margin-left: -170px; height: 575px; margin-top: -400px; width: 630px;">
-                                </iframe>
+                            <div class="levels kit">
+                                <p class="status_type">maintenance kit</p>
+                                <img class="status_tray_image"/>
                             </div>
-                        </td>
-                        <td>
-                            <h2>Crapo 2</h2>
-                            <div style="border: 1px solid rgb(0, 0, 0); overflow: hidden; margin: 15px auto; max-width: 580px;">
-                                <iframe scrolling="no" src="http://137.112.30.30/hp/device/this.LCDispatcher" style="border: 0px none; margin-left: -170px; height: 575px; margin-top: -400px; width: 630px;">
-                                </iframe>
+                        </div>
+                    </td>
+                    <td>
+                        <h2>Crapo 2</h2>
+                        <div class="status_all">
+                            <h2 align="center" id="crapo2-status" class="status">Status - Unknown</h2>
+                            <div class="levels tray2">
+                                <p class="status_type">tray2</p> 
+                                <img id="crapo2-tray2-img" class="status_tray_image"/>
+                                <p id="crapo2-tray2" class="status_tray_level">Unknown</p>
                             </div>
-                        </td>
-                        <td>
-                            <h2>Crapo 3</h2>
-                            <div style="border: 1px solid rgb(0, 0, 0); overflow: hidden; margin: 15px auto; max-width: 580px;">
-                                <iframe scrolling="no" src="http://137.112.30.31/hp/device/this.LCDispatcher" style="border: 0px none; margin-left: -170px; height: 575px; margin-top: -400px; width: 630px;">
-                                </iframe>
+                            <div class="levels tray3">
+                                <p class="status_type">tray3</p>
+                                <img id="crapo2-tray3-img" class="status_tray_image"/>
+                                <p id="crapo2-tray3" class="status_tray_level">Unknown</p>
                             </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div id="footer">
-                Written 2/17/2015 by Winfield Greene<br>
-                Winfield is a cool guy.
-            </div>
-        </body>
-        </html>
+                            <div class="levels ink">
+                                <p class="status_type">ink levels</p>
+                                <img class="status_tray_image"/>
+                            </div>
+                            <div class="levels kit">
+                                <p class="status_type">maintenance kit</p>
+                                <img class="status_tray_image"/>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <h2>Crapo 3</h2>
+                        <div class="status_all">
+                            <h2 align="center" id="crapo3-status" class="status">Status - Unknown</h2>
+                            <div class="levels tray2">
+                                <p class="status_type">tray2</p> 
+                                <img id="crapo3-tray2-img" class="status_tray_image"/>
+                                <p id="crapo3-tray2" class="status_tray_level">Unknown</p>
+                            </div>
+                            <div class="levels tray3">
+                                <p class="status_type">tray3</p>
+                                <img id="crapo3-tray3-img" class="status_tray_image"/>
+                                <p id="crapo3-tray3" class="status_tray_level">Unknown</p>
+                            </div>
+                            <div class="levels ink">
+                                <p class="status_type">ink levels</p>
+                                <img class="status_tray_image"/>
+                            </div>
+                            <div class="levels kit">
+                                <p class="status_type">maintenance kit</p>
+                                <img class="status_tray_image"/>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="footer">
+            Written 2/17/2015 by Winfield Greene<br>
+            Winfield is a cool guy.
+        </div>
+    </body>
+</html>
