@@ -65,7 +65,6 @@ window.onload = function() {
 				else if (printer.type === "9040"){
 					// -__- why no id attributes HP!
 					setStatus(printer.hostName, $(result).find('#deviceStatusPage').children()[0].childNodes[2].textContent);
-					console.log($(result).find('#deviceStatusPage').children()[2].childNodes[2].childNodes[1].childNodes[4].childNodes[5].childNodes[1].textContent);
 					setTrayLevel(printer.hostName, $(result).find('#deviceStatusPage').children()[2].childNodes[2].childNodes[1].childNodes[4].childNodes[3].childNodes[2].textContent, 
 						$(result).find('#deviceStatusPage').children()[2].childNodes[2].childNodes[1].childNodes[4].childNodes[5].childNodes[1].textContent, 2);
 					setTrayLevel(printer.hostName, $(result).find('#deviceStatusPage').children()[2].childNodes[2].childNodes[1].childNodes[6].childNodes[3].childNodes[2].textContent,
