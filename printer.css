@@ -1,17 +1,21 @@
+body {
+    margin: 0px !important;
+}
 #header {
     background-color:#990000;
     color:white;
     text-align:center;
-    padding:10px;
+    padding:5px;
 }
 #left {
-    width:130px;
+    width:160px;
     line-height:30px;
     float:left;
     padding:5px; 
 }
 #nav {
     background-color:#eeeeee;
+    padding: 10px;
 }
 #reams, #ream_section{
     display: inline-block;
@@ -29,7 +33,9 @@
     color:white;
     clear:both;
     text-align:center;
-    padding:5px; 
+    width: 100%;
+    position:absolute;
+    bottom:0;
 }
 .status_all {
     border: 1px solid black; 
@@ -46,19 +52,23 @@
 .status_type{
     margin: 0px 0px 0px 10px; 
     width: 80px; 
-    display: inline-block
+    display: inline-block;
 }
 .status_tray_image{
     margin: 0px; 
     width: 150px; 
     height: 15px; 
-    display: inline-block
+    display: inline-block;
+    -webkit-margin-before:0em;
+    -webkit-margin-after:0em;
 }
 .status_tray_level{
     margin: 0px;
     display: inline-block; 
     width: 100px;
-    text-align: center
+    text-align: center;
+    -webkit-margin-before:0em;
+    -webkit-margin-after:0em;
 }
 
 .empty_level{
