@@ -12,7 +12,7 @@ var port = process.env.PORT || 8080;
 app.use(express.static(__dirname + '/', {maxAge: '5d'}));
 
 app.get('/getPrinterInfo', function(req, res) {
-	let printer = req.query.printer;
+	var printer = req.query.printer;
 	var url = "http://" + printer.hostName + ".printer.rose-hulman.edu";
 	request(url, function(error, response, html){
 		if (error) throw error;
