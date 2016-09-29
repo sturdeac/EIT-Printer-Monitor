@@ -38,12 +38,13 @@ body {
     bottom:0;
 }
 .status_all {
-    border: 1px solid black; 
+    border: 5px solid black; 
     width: 500px; 
     margin: 15px auto;
 }
 .status{
     margin: 14px 0px 14px 0px;
+    font-weight: normal !important;
 }
 
 .levels {
@@ -76,7 +77,7 @@ body {
     width: 248.5px;
 }
 .bar_level {
-    background-color: black;
+    background-color: lightblue;
     width: 0%; /* Adjust with JavaScript */
     height: 100%;
 }
