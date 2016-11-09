@@ -1,1 +1,8 @@
 node_modules/*
+.idea/EIT-Printer-Monitor.iml
+
+.idea/modules.xml
+
+.idea/vcs.xml
+
+.idea/workspace.xml
