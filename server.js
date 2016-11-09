@@ -1,12 +1,11 @@
 var express = require('express');
 var request = require('request');
 var path = require('path');
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 var app = express();
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 80;
 
 // make express look in the public directory for assets (css/js/img)
 app.use(express.static(__dirname + '/', {maxAge: '5d'}));
@@ -30,5 +29,10 @@ app.get('*', function(req, res) {
 });
 
 app.listen(port, function() {
-    console.log('The printer monitor is running on http://localhost:' + port);
+	if (port !== 80){
+		console.log('The printer monitor is running on the localhost server!');
+	}
+    else{
+		console.log('The printer monitor is running on the production server!');
+	}
 });
