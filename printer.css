@@ -39,12 +39,14 @@ body {
 }
 .status_all {
     border: 5px solid black; 
-    width: 500px; 
-    margin: 15px auto;
+    width: 400px;
+    margin: 10px auto;
+    font-size: 0.75em;
 }
 .status{
-    margin: 14px 0px 14px 0px;
+    margin: 12px 0px 12px 0px;
     font-weight: normal !important;
+    font-size: 1.25em !important;
 }
 
 .levels {
@@ -52,13 +54,13 @@ body {
 }
 .status_type{
     margin: 0px 0px 0px 10px; 
-    width: 80px; 
+    width: 60px;
     display: inline-block;
 }
 .status_tray_image{
     margin: 0px; 
-    width: 150px; 
-    height: 15px; 
+    width: 150px;
+    height: 10px;
     display: inline-block;
     -webkit-margin-before:0em;
     -webkit-margin-after:0em;
@@ -66,6 +68,15 @@ body {
 .status_tray_level{
     margin: 0px;
     display: inline-block; 
+    width: 60px;
+    text-align: center;
+    -webkit-margin-before:0em;
+    -webkit-margin-after:0em;
+}
+
+.status_tray_percent{
+    margin: 0px;
+    display: inline-block;
     width: 100px;
     text-align: center;
     -webkit-margin-before:0em;
@@ -83,5 +94,5 @@ body {
 }
 .printer {
     padding-left: 40px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 }

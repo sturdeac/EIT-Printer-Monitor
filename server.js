@@ -1,6 +1,7 @@
 var express = require('express');
 var request = require('request');
 var path = require('path');
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 var app = express();
 
 // set the port of our application
