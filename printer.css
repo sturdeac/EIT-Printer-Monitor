@@ -39,7 +39,7 @@ body {
     bottom:0;
 }
 .status_all {
-    border: 4px solid black;
+    border: 3px solid black;
     width: 400px;
     margin: 10px auto;
     font-size: 12px;
@@ -100,4 +100,5 @@ body {
 
 .name {
     margin-bottom: 8px;
+    margin-top: 12px;
 }
