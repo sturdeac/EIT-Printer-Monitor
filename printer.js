@@ -41,13 +41,15 @@ var printerList = {
 	"crapo3": {
 		hostName: "crapo3",
 		type: "9040"
-	},
+	}
 
 };
 
-window.onload = function() {
-	var reams = 0.0;
+var reams = 0.0;
 
+var loadPrinterData = function() {
+	reams = 0.0;
+	clearAll();
 	$.each(printerList, function(index, printer) {
 		$.ajax({
 			url: '/getPrinterInfo',
@@ -65,7 +67,7 @@ window.onload = function() {
 				else if (printer.type === "9040"){
 					// -__- why no id attributes HP!
 					setStatus(printer.hostName, $(result).find('#deviceStatusPage').children()[0].childNodes[2].textContent);
-					setTrayLevel(printer.hostName, $(result).find('#deviceStatusPage').children()[2].childNodes[2].childNodes[1].childNodes[4].childNodes[3].childNodes[2].textContent, 
+					setTrayLevel(printer.hostName, $(result).find('#deviceStatusPage').children()[2].childNodes[2].childNodes[1].childNodes[4].childNodes[3].childNodes[2].textContent,
 						$(result).find('#deviceStatusPage').children()[2].childNodes[2].childNodes[1].childNodes[4].childNodes[5].childNodes[1].textContent, 2);
 					setTrayLevel(printer.hostName, $(result).find('#deviceStatusPage').children()[2].childNodes[2].childNodes[1].childNodes[6].childNodes[3].childNodes[2].textContent,
 						$(result).find('#deviceStatusPage').children()[2].childNodes[2].childNodes[1].childNodes[6].childNodes[5].childNodes[1].textContent, 3);
@@ -83,64 +85,99 @@ window.onload = function() {
 			}
 		});
 	});
-	var setStatus = function(hostName, status){
-		if (status.startsWith("Load Tray 1") || status.startsWith("Processing") 
-			|| status.startsWith("Ready") || status.startsWith("ORDER CARTRIDGE")){
-			status = "Working";
-		}
-		$('#' + hostName + '-status').text("Status - " + toTitleCase(status));
-	};
+};
 
-	var setTrayLevel = function(hostName, trayLevel, paperType, trayNumber) {
-		$('#' +hostName + '-tray' + trayNumber + '-type').text(toTitleCase(paperType));
-		var imgLevel = -1;
-		if (trayLevel.includes('40 - 100%')){
-			$('#' + hostName + '-tray' + trayNumber).text('40 - 100%');
-			imgLevel = 4;
-			reams += 0.0;
-		}
-		else if (trayLevel.includes('20 - 40%')){
-			$('#' + hostName + '-tray' + trayNumber).text('20 - 40%');
-			imgLevel = 3
-			reams += 0.6
-		}
-		else if (trayLevel.includes('10 - 20%')){
-			$('#' + hostName + '-tray' + trayNumber).text('10 - 20%');
-			imgLevel = 2
-			reams += 0.8
-		}
-		else if (trayLevel.includes('< 10%') || trayLevel.includes('1 - 10%')){
-			$('#' + hostName + '-tray' + trayNumber).text('1 - 10%');
-			imgLevel = 1
-			reams += 0.9
-		}
-		else if (trayLevel.includes('Empty')){
-			$('#' + hostName + '-tray' + trayNumber).text('0%');
-			imgLevel = 0
-			reams += 1.0
-		}
+var setStatus = function(hostName, status){
+	if (status.startsWith("Load Tray 1") || status.startsWith("Processing")
+		|| status.startsWith("Ready") || status.startsWith("ORDER CARTRIDGE")){
+		status = "Working";
+	}
+	$('#' + hostName + '-status').text("Status - " + toTitleCase(status));
+};
 
-		$('#reams').text(" " + reams.toFixed(1));
-
-		if (imgLevel != -1){
-			$('#' + hostName + '-tray' + trayNumber + '-img').attr("src","images/level" + imgLevel + ".gif");
-		}
-
+var setTrayLevel = function(hostName, trayLevel, paperType, trayNumber) {
+	$('#' +hostName + '-tray' + trayNumber + '-type').text(toTitleCase(paperType));
+	var imgLevel = -1;
+	if (trayLevel.includes('40 - 100%')){
+		$('#' + hostName + '-tray' + trayNumber).text('40 - 100%');
+		imgLevel = 4;
+		reams += 0.0;
+	}
+	else if (trayLevel.includes('20 - 40%')){
+		$('#' + hostName + '-tray' + trayNumber).text('20 - 40%');
+		imgLevel = 3;
+		reams += 0.6;
+	}
+	else if (trayLevel.includes('10 - 20%')){
+		$('#' + hostName + '-tray' + trayNumber).text('10 - 20%');
+		imgLevel = 2;
+		reams += 0.8;
+	}
+	else if (trayLevel.includes('< 10%') || trayLevel.includes('1 - 10%')){
+		$('#' + hostName + '-tray' + trayNumber).text('1 - 10%');
+		imgLevel = 1;
+		reams += 0.9;
+	}
+	else if (trayLevel.includes('Empty')){
+		$('#' + hostName + '-tray' + trayNumber).text('0%');
+		imgLevel = 0;
+		reams += 1.0;
+	}
+	else {
+		$('#' + hostName + '-tray' + trayNumber).text('Unknown');
+		reams += 0.0;
+		$('#' + hostName + '-tray' + trayNumber + '-img').attr("src","images/level0.gif");
 	}
 
-	var setInkLevel = function(hostName, level){
+	$('#reams').text(" " + reams.toFixed(1));
+
+	if (imgLevel != -1){
+		$('#' + hostName + '-tray' + trayNumber + '-img').attr("src","images/level" + imgLevel + ".gif");
+	}
+
+};
+
+var setInkLevel = function(hostName, level){
+	if (level == -1){
+		$('#' + hostName + '-inkbar').width(0);
+		$('#' + hostName + '-ink').text("Unknown");
+	}
+	else {
 		$('#' + hostName + '-inkbar').width(level);
 		$('#' + hostName + '-ink').text(level);
 	}
 
-	var setKitLevel = function(hostName, level){
+};
+
+var setKitLevel = function(hostName, level){
+	if (level == -1){
+		$('#' + hostName + '-kitbar').width(0);
+		$('#' + hostName + '-kit').text("Unknown");
+	}
+	else {
 		$('#' + hostName + '-kitbar').width(level);
 		$('#' + hostName + '-kit').text(level);
 	}
-
-	function toTitleCase(str){
-	    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-	}
 };
+
+var toTitleCase = function(str){
+	return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};
+
+var clearAll = function(){
+	$.each(printerList, function(index, printer) {
+		setInkLevel(printer.hostName, -1);
+		setKitLevel(printer.hostName, -1);
+		setTrayLevel(printer.hostName, "-1", "Unknown", 2);
+		setTrayLevel(printer.hostName, "-1", "Unknown", 3);
+	});
+};
+
+
+loadPrinterData();
+
+//reload data every 5 minutes
+setInterval(loadPrinterData, 300000);
+
 
 
