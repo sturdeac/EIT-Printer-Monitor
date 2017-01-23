@@ -88,12 +88,15 @@ var loadPrinterData = function() {
 };
 
 var setStatus = function(hostName, status){
-	if (status.startsWith("Load Tray 1") || status.startsWith("Processing")
-		|| status.startsWith("Ready") || status.startsWith("ORDER CARTRIDGE")){
+	status = status.replace("Load Tray 1", "");
+	status = status.replace("Processing job from Tray 3", "");
+	status = status.replace("Processing job from Tray 2", "");
+	if (status == "" || status.includes("Ready")){
 		status = "Working";
 	}
 	$('#' + hostName + '-status').text("Status - " + toTitleCase(status));
 };
+
 
 var setTrayLevel = function(hostName, trayLevel, paperType, trayNumber) {
 	$('#' +hostName + '-tray' + trayNumber + '-type').text(toTitleCase(paperType));
