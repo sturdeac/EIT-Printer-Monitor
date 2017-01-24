@@ -89,8 +89,8 @@ var loadPrinterData = function() {
 
 var setStatus = function(hostName, status){
 	status = status.replace("Load Tray 1", "");
-	status = status.replace("Processing job from Tray 3", "");
-	status = status.replace("Processing job from Tray 2", "");
+	status = status.replace("Processing job from tray 3", "");
+	status = status.replace("Processing job from tray 2", "");
 	if (status == "" || status.includes("Ready")){
 		status = "Working";
 	}
