@@ -30,8 +30,8 @@ var printerList = {
 		hostName: "o200c-ps",
 		type: "9040"
 	},
-	"m246-ps": {
-		hostName: "m246-ps",
+	"m242": {
+		hostName: "m242",
 		type: "9040"
 	},
 	"crapo2": {
