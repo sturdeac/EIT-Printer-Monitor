@@ -12,7 +12,7 @@ var printerList = {
 	},
 	"D116": {
 		hostName: "D116",
-		type: "9040"
+		type: "M806"
 	},
 	"bl113-ps": {
 		hostName: "bl113-ps",
