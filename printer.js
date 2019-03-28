@@ -20,7 +20,7 @@ var printerList = {
 	},
 	"o157-ps": {
 		hostName: "o157-ps",
-		type: "9040"
+		type: "M806"
 	},
 	"o257-ps": {
 		hostName: "o257-ps",
@@ -28,7 +28,7 @@ var printerList = {
 	},
 	"o200c-ps": {
 		hostName: "o200c-ps",
-		type: "9040"
+		type: "M806"
 	},
 	"m242": {
 		hostName: "m242",
